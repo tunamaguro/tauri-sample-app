@@ -1,0 +1,39 @@
+{
+    "name": "tauri",
+    "dockerComposeFile": [
+        "../compose.yaml"
+    ],
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    "features": {
+        // "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "terminal.integrated.shellIntegration.enabled": true,
+                "lldb.executable": "/usr/bin/lldb",
+                // VS Code don't watch files under ./target
+                "files.watcherExclude": {
+                    "**/target/**": true
+                },
+                "rust-analyzer.checkOnSave.command": "clippy",
+            },
+            // Add the IDs of extensions you want installed when the container is created.
+            "extensions": [
+                // rust
+                "vadimcn.vscode-lldb",
+                "rust-lang.rust-analyzer",
+                "tamasfe.even-better-toml",
+                // node
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint",
+                // utils
+                "mhutchie.git-graph",
+                "mutantdino.resourcemonitor",
+            ],
+        }
+    },
+    "remoteUser": "vscode"
+}
