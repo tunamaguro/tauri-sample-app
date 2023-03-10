@@ -35,5 +35,6 @@
             ],
         }
     },
+    "postAttachCommand": "rustup component add clippy rustfmt",
     "remoteUser": "vscode"
 }
